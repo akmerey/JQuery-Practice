@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+    <style>
+       .scroll {
+           height: 1000px;
+           background-color: lightgreen;
+       }
+   </style>
+   <style>
+    .box{
+        width: 500px;
+        height: 300px;
+        border: 5px solid #333;
+    }
+</style>
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    // Set background image of a div on click of the button
+    $("button").click(function(){
+        var imageUrl = "images/sky.jpg";
+        $(".box").css("background-image", "url(" + imageUrl + ")");
+    });
+});
+</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script>
+       $(document).ready(function () {
+           var max_length = 25;
+           $('textarea').keyup(function () {
+               var len = max_length - $(this).val().length;
+               $('.GFG').text(len);
+           });
+
+       });
+   </script>
+</head>
+
+<body>
+  <p>This is original paragraph. </p>
+<p>Click me to see it fade.</p>
+<script>
+  $( "p:last" ).click(function() {
+  $( this ).fadeTo( "slow", 0.40 );
+});
+</script>
+<button id="btn1">Animate height & width</button>
+<button id="btn2">Reset</button>
+<div id="box" style="background:
+#B45F04;height:100px;width:100px;margin:6px;"></div>
+<script>
+  $( "#btn1" ).click(function() {
+  $( "#box" ).animate({
+   width: "300px",
+   height: "300px",
+    }, 1500 );
+});
+
+$( "#btn2" ).click(function() {
+  $( "#box" ).animate({
+   width: "100px",
+   height: "100px",
+    }, 1500 );
+});
+</script>
+  <div class="box"></div>
+    <p><button type="button">Set Background Image</button></p>
+    <div class="container">
+        <h1 style="color: green">Sign In</h1>
+        <form method="post">
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" />
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+            </p>
+            <input id="accept" name="accept" type="checkbox" value="y"/>I accept<br>
+  <input id="submitbtn" disabled="disabled" name="Submit" type="submit" value="Register" />
+        <script>
+          $('#accept').click(function() {
+                  if ($('#submitbtn').is(':disabled')) {
+                      $('#submitbtn').removeAttr('disabled');
+                    } else {
+                      $('#submitbtn').attr('disabled', 'disabled');
+                    }
+                });
+        </script>
+        <script src=
+"https://code.jquery.com/jquery-3.3.1.min.js">
+ </script>
+        </form>
+    </div>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>
+  <form>
+
+<p>Maximum input characters: 25</p>
+
+
+      <textarea maxlength="25"></textarea>
+
+
+<p>
+          <span class="GFG">25</span>
+          Characters Remaining
+      </p>
+
+  </form>
+    <p class="scroll">GeeksforGeeks is a
+      computer science portal. This is a
+      large scrollable area.</p>
+
+    <button onclick="scrollToTop()">
+         Click to scroll to top
+     </button>
+      <script>
+          function scrollToTop() {
+              $(window).scrollTop(0);
+          }
+      </script>
+
+</body>
+
+</html>
